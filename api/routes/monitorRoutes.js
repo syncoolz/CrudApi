@@ -6,7 +6,7 @@ module.exports = app => {
     .get(farmingtalesBuilder.list_all_monitors)
     .post(farmingtalesBuilder.create_a_monitor);
   app
-    .route('/monitor/farmingtales/waxid/:waxid')
+    .route('/monitor/farmingtales/:waxid')
     .get(farmingtalesBuilder.read_a_monitor)
     .put(farmingtalesBuilder.update_a_monitor)
     .delete(farmingtalesBuilder.delete_a_monitor);
