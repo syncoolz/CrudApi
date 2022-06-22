@@ -9,7 +9,7 @@ const routes = require('./api/routes/monitorRoutes');
 // mongoose.Promise = global.Promise;
 // mongoose.set('useFindAndModify', false);
 mongoose.connect(
-  'mongodb://localhost/CrudApi',
+  process.env.URL_DATABASE,
   { useNewUrlParser: true }
 );
 const port = process.env.PORT || 3000;
