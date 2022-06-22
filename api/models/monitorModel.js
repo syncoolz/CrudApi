@@ -4,7 +4,15 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const monitorSchema = new Schema(
   {
+    uid: {
+      type: String,
+      required: 'waxid cannot be blank'
+    },
     waxid: {
+      type: String,
+      required: 'waxid cannot be blank'
+    },
+    game: {
       type: String,
       required: 'waxid cannot be blank'
     },
