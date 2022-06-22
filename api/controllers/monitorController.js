@@ -4,7 +4,7 @@
 const mongoose = require('mongoose');
 // Mongoose model provides an interface to the database 
 // for creating, querying, updating, deleting records, etc.
-const monitor = mongoose.model('monitors');
+const monitor = mongoose.model('monitor');
 
 exports.list_all_monitors = (req, res) => {
   monitor.find({}, (err, monitors) => {
