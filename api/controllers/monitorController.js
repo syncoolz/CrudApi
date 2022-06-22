@@ -20,14 +20,14 @@ exports.create_a_monitor = (req, res) => {
   });
 };
 exports.read_a_monitor = (req, res) => {
-  monitor.findById(req.params.monitorId, (err, monitor) => {
+  monitor.findOne({ waxid: req.params.waxid }, (err, monitor) => {
     if (err) res.send(err);
     res.json(monitor);
   });
 };
 exports.update_a_monitor = (req, res) => {
   monitor.findOneAndUpdate(
-    { _id: req.params.monitorId },
+    { waxid: req.params.waxid },
     req.body,
     { new: true },
     (err, monitor) => {
@@ -37,11 +37,11 @@ exports.update_a_monitor = (req, res) => {
   );
 };
 exports.delete_a_monitor = (req, res) => {
-  monitor.deleteOne({ _id: req.params.monitorId }, err => {
+  monitor.deleteOne({ waxid: req.params.waxid }, err => {
     if (err) res.send(err);
     res.json({
       message: 'monitor successfully deleted',
-     _id: req.params.monitorId
+      waxid: req.params.waxid
     });
   });
 };
