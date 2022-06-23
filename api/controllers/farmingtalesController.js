@@ -25,8 +25,14 @@ exports.read_a_monitor = (req, res) => {
     res.json(monitor);
   });
 };
-exports.read_all_waxid_monitor = (req, res) => {
+exports.read_all_uid_monitor = (req, res) => {
   monitor.find({ uid: req.params.uid }, (err, monitor) => {
+    if (err) res.send(err);
+    res.json(monitor);
+  });
+};
+exports.updatebulk_monitor = (req, res) => {
+  monitor.bulkWrite(req.body, (err, monitor) => {
     if (err) res.send(err);
     res.json(monitor);
   });

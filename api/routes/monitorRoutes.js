@@ -12,7 +12,10 @@ module.exports = app => {
     .delete(farmingtalesBuilder.delete_a_monitor);
   app
     .route('/monitor/farmingtales/uid/:uid')
-    .get(farmingtalesBuilder.read_all_waxid_monitor)
+    .get(farmingtalesBuilder.read_all_uid_monitor)
+  app
+    .route('/monitor/farmingtales/bulkwrite')
+    .post(farmingtalesBuilder.updatebulk_monitor)
   app
     .route('/monitor/goldmand')
     .get(goldmandBuilder.list_all_monitors)
@@ -24,5 +27,8 @@ module.exports = app => {
     .delete(goldmandBuilder.delete_a_monitor);
   app
     .route('/monitor/goldmand/uid/:uid')
-    .get(goldmandBuilder.read_all_waxid_monitor)
+    .get(goldmandBuilder.read_all_uid_monitor)
+  app
+    .route('/monitor/goldmand/bulkwrite')
+    .post(goldmandBuilder.updatebulk_monitor)
 };
