@@ -76,10 +76,10 @@ const configSchema = new Schema(
       type: Number,
       required: 'maxlimit_stake_sest cannot be blank'
     },
-    // products_locked: {
-    //   type: Array,
-    //   required: 'products_locked cannot be blank'
-    // }
+    products_locked: {
+      type: Array,
+      required: 'products_locked cannot be blank'
+    }
   },
   { collection: 'config-farmingtales' }
 );
