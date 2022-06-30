@@ -36,6 +36,10 @@ const configSchema = new Schema(
       type: Boolean,
       required: 'auto_sell_sest cannot be blank'
     },
+     auto_sell_products: {
+      type: Boolean,
+      required: 'auto_sell_products cannot be blank'
+    },
     auto_stake_sest: {
       type: Boolean,
       required: 'auto_stake_sest cannot be blank'
