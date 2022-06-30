@@ -1,0 +1,68 @@
+const farmingtalesBuilder_Monitor = require('../controllers/farmingtalesController-monitor');
+const goldmandBuilder_Monitor = require('../controllers/goldmandController-monitor');
+const farmingtalesBuilder_Config = require('../controllers/farmingtalesController-config');
+const goldmandBuilder_Config = require('../controllers/goldmandController-config');
+module.exports = app => {
+  //Monitor
+  app
+    .route('/monitor/farmingtales')
+    .get(farmingtalesBuilder_Monitor.list_all_monitors)
+    .post(farmingtalesBuilder_Monitor.create_a_monitor);
+  app
+    .route('/monitor/farmingtales/:waxid')
+    .get(farmingtalesBuilder_Monitor.read_a_monitor)
+    .put(farmingtalesBuilder_Monitor.update_a_monitor)
+    .delete(farmingtalesBuilder_Monitor.delete_a_monitor);
+  app
+    .route('/monitor/farmingtales/uid/:uid')
+    .get(farmingtalesBuilder_Monitor.read_all_uid_monitor)
+  app
+    .route('/monitor/farmingtales/bulkwrite')
+    .post(farmingtalesBuilder_Monitor.updatebulk_monitor)
+  app
+    .route('/monitor/goldmand')
+    .get(goldmandBuilder_Monitor.list_all_monitors)
+    .post(goldmandBuilder_Monitor.create_a_monitor);
+  app
+    .route('/monitor/goldmand/:waxid')
+    .get(goldmandBuilder_Monitor.read_a_monitor)
+    .put(goldmandBuilder_Monitor.update_a_monitor)
+    .delete(goldmandBuilder_Monitor.delete_a_monitor);
+  app
+    .route('/monitor/goldmand/uid/:uid')
+    .get(goldmandBuilder_Monitor.read_all_uid_monitor)
+  app
+    .route('/monitor/goldmand/bulkwrite')
+    .post(goldmandBuilder_Monitor.updatebulk_monitor)
+  //Config
+  app
+    .route('/game-config/farmingtales')
+    .get(farmingtalesBuilder_Config.list_all_configs)
+    .post(farmingtalesBuilder_Config.create_a_config);
+  app
+    .route('/game-config/farmingtales/:waxAccount')
+    .get(farmingtalesBuilder_Config.read_a_config)
+    .put(farmingtalesBuilder_Config.update_a_config)
+    .delete(farmingtalesBuilder_Config.delete_a_config);
+  app
+    .route('/game-config/farmingtales/uid/:uid')
+    .get(farmingtalesBuilder_Config.read_all_uid_config)
+  app
+    .route('/game-config/farmingtales/bulkwrite')
+    .post(farmingtalesBuilder_Config.updatebulk_config)
+  app
+    .route('/game-config/goldmand')
+    .get(goldmandBuilder_Config.list_all_configs)
+    .post(goldmandBuilder_Config.create_a_config);
+  app
+    .route('/game-config/goldmand/:waxAccount')
+    .get(goldmandBuilder_Config.read_a_config)
+    .put(goldmandBuilder_Config.update_a_config)
+    .delete(goldmandBuilder_Config.delete_a_config);
+  app
+    .route('/game-config/goldmand/uid/:uid')
+    .get(goldmandBuilder_Config.read_all_uid_config)
+  app
+    .route('/game-config/goldmand/bulkwrite')
+    .post(goldmandBuilder_Config.updatebulk_config)
+};
