@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 // Body-parser is the Node.js body parsing middleware. 
 // It is responsible for parsing the incoming request bodies in a middleware before you handle it.
 const bodyParser = require('body-parser');
-global.Task = require('./api/models/farmingtalesModel');
-global.Task1 = require('./api/models/goldmandModel');
+global.Task = require('./api/models/farmingtalesModel-monitor');
+global.Task1 = require('./api/models/goldmandModel-monitor');
+global.Task3 = require('./api/models/farmingtalesModel-config');
+global.Task4 = require('./api/models/goldmandModel-config');
 const routes = require('./api/routes/monitorRoutes');
 // mongoose.Promise = global.Promise;
 // mongoose.set('useFindAndModify', false);
