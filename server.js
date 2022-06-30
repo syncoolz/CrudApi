@@ -8,7 +8,7 @@ global.Task = require('./api/models/farmingtalesModel-monitor');
 global.Task1 = require('./api/models/goldmandModel-monitor');
 global.Task3 = require('./api/models/farmingtalesModel-config');
 global.Task4 = require('./api/models/goldmandModel-config');
-const routes = require('./api/routes/monitorRoutes');
+const routes = require('./api/routes/routes');
 // mongoose.Promise = global.Promise;
 // mongoose.set('useFindAndModify', false);
 mongoose.connect(
